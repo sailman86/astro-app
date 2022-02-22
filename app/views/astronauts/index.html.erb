@@ -1,5 +1,5 @@
 <h1>Here are all the astronauts</h1>
 
 <% @astronauts.each do |astronaut| %>
-  <%= astronaut.name %>
+  <%= link_to astronaut.name, astronaut_path(astronaut) %>
 <% end %>
