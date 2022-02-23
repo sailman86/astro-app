@@ -1,21 +1,16 @@
-<h1>AstroApp</h1>
-<p>Connect with the space!</p>
-
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://wallup.net/wp-content/uploads/2016/01/211730-space-Earth.jpg);">
-  <div class="container">
-    <h1>@astronaut.name</h1>
-
+<div class="container">
+    <h1>Astronaut Show page</h1>
+  <div class="card-product">
+    <h2><%= @astronaut.name %></h2>
+    <div class="card-product-infos">
+      <p><%= @astronaut.bio %></p>
+    </div>
   </div>
-</div>
-
-div class="card-product">
-  <img src="@astronaut.img" />
-  <div class="card-product-infos">
-
-    <p><%= @astronaut.bio %></p>
-  </div>
+  <%= link_to 'back', root_path %>
+  <%= link_to 'create a booking', new_astronaut_booking_path(@astronaut) %>
 </div>
 
 
-<%= link_to 'back', root_path %>
-<%= link_to 'create a booking', new_astronaut_booking_path(@astronaut) %>
+
+
+
