@@ -1,16 +1,16 @@
-<div class="container">
-    <h1>Astronaut Show page</h1>
-  <div class="card-product">
-    <h2><%= @astronaut.name %></h2>
-    <div class="card-product-infos">
-      <p><%= @astronaut.bio %></p>
-    </div>
+<div class="container d-flex justify-content-center">
+  <div class="card" style="width: 36rem;">
+    <img class="card-img-top" src="http://www.universetoday.com/wp-content/uploads/2010/03/Neil-Armstrong.jpg" alt="Card image cap">
+      <div class="card-body">
+      <h2 class="card-text"><%= @astronaut.name %></h2>
+      <p class="card-text"><%= @astronaut.bio %></p>
+      <%= link_to 'create a booking', new_astronaut_booking_path(@astronaut) %>
+      </div>
   </div>
-  <%= link_to 'back', root_path %>
-  <%= link_to 'create a booking', new_astronaut_booking_path(@astronaut) %>
 </div>
 
-
-
-
-
+<div class="container">
+<div class="buttons">
+  <%= link_to 'back', root_path %>
+</div>
+</div>
