@@ -1,6 +1,17 @@
-<h1>Astronaut Show page</h1>
+<div class="container">
+    <h1>Astronaut Show page</h1>
+  <div class="card-product">
+    <h2><%= @astronaut.name %></h2>
+    <div class="card-product-infos">
+      <p><%= @astronaut.bio %></p>
+    </div>
+  </div>
+  <%= link_to 'back', root_path %>
+</div>
 
-<h2><%= @astronaut.name %></h2>
-<p><%= @astronaut.bio %></p>
 
-<%= link_to 'back', root_path %>
+
+
+
+  </div>
+</div>
