@@ -1,5 +1,44 @@
-<h1>Here are all the astronauts</h1>
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon flex-container">
+  <div class="">
+    <h2 class="title flex-item">Astroapp</h2>
+    <div class="collapse navbar-collapse flex-item" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto flex-item">
+        <%# if user_signed_in? %>
+          <li class="nav-item dropdown">
+            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <%= link_to "Action", "#", class: "dropdown-item" %>
+              <%= link_to "Another action", "#", class: "dropdown-item" %>
+              <%#= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+            </div>
+          </li>
+        <%# else %>
+          <!--li class="nav-item"-->
+            <%#= link_to "Login", new_user_session_path, class: "nav-link" %>
+          <!--/li-->
+        <%# end %>
+      </ul>
+    </div>
+  </div>
+</div>
 
-<% @astronauts.each do |astronaut| %>
-  <%= link_to astronaut.name, astronaut_path(astronaut) %>
-<% end %>
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://wallup.net/wp-content/uploads/2016/01/211730-space-Earth.jpg);">
+  <div class="container">
+    <h1>Here are all the astronauts</h1>
+    <p>Connect with the space!</p>
+  </div>
+</div>
+
+<div class="container">
+  <h2>Choose your favorite Astronaut</h2>
+    <% @astronauts.each do |astronaut| %>
+      <div class="card-product">
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+        <div class="card-product-infos">
+          <h2><%= link_to astronaut.name, astronaut_path(astronaut) %></h2>
+          <p>Product description with <strong>relevant info</strong> only.</p>
+        </div>
+      </div>
+    <% end %>
+</div>
