@@ -2,6 +2,16 @@
   <div class="container">
     <h1>Astroapp</h1>
     <p>Connect with the space!</p>
+    <div>
+        <%= form_tag root_path, method: :get do %>
+         <%= text_field_tag :query,
+           params[:query],
+           class: "form-control",
+           placeholder: "Search for astronaut"
+         %>
+        <%= submit_tag "Search", class: "btn btn-primary" %>
+      <% end %>
+    </div>
   </div>
 </div>
 

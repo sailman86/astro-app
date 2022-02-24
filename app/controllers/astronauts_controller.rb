@@ -1,6 +1,10 @@
 class AstronautsController < ApplicationController
   def index
-    @astronauts = Astronaut.all
+    if params[:query].present?
+      @astronauts = Astronaut.where("name ILIKE ?", "%#{params[:query]}%")
+    else
+      @astronauts = Astronaut.all
+    end
   end
 
   def show
