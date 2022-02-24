@@ -1,8 +1,4 @@
 class BookingsController < ApplicationController
-  def new
-    @booking = Booking.new
-    @astronaut = Astronaut.find(params[:astronaut_id])
-  end
 
   def create
     @astronaut = Astronaut.find(params[:astronaut_id])
