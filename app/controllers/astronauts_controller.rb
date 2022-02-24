@@ -40,6 +40,6 @@ class AstronautsController < ApplicationController
   end
 
   def astronaut_params
-    params.require(:astronaut).permit(:name, :bio, :nationality, :time_slot)
+    params.require(:astronaut).permit(:name, :bio, :nationality, :time_slot, :photo)
   end
 end
