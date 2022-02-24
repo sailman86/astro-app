@@ -22,7 +22,11 @@
   <div class="row">
     <% @astronauts.each do |astronaut| %>
       <div class="card-product col">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+        <% if astronaut.photo.attached?  %>
+          <%= cl_image_tag astronaut.photo.key, height: 300, width: 400, crop: :fill, gravity: :face %>
+        <% else  %>
+          <img width="400" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.OrTvDaHqHaLr8GCNb25AngHaE8%26pid%3DApi&f=1" alt="">
+        <% end  %>
         <div class="card-product-infos">
           <h2 class="astro-name"><%= link_to astronaut.name, astronaut_path(astronaut) %></h2>
           <p><strong><%= astronaut.nationality %></strong></p>
