@@ -1,10 +1,15 @@
-<h1>Create a new astronaut </h1>
-
-<%= simple_form_for [@astronaut] do |f| %>
-   <%= f.input :name %>
-   <%= f.input :bio %>
-   <%= f.input :nationality %>
-   <%= f.input :time_slot %>
-   <%= f.input :photo, as: :file %>
-  <%= f.submit "Submit new astronaut", class: "btn btn-primary" %>
-<% end %>
+<div class="container d-flex form">
+  <div class="col">
+    <h1>Create a new astronaut</h1>
+  </div>
+  <div class="col">
+    <%= simple_form_for [@astronaut] do |f| %>
+      <%= f.input :name %>
+      <%= f.input :bio %>
+      <%= f.input :nationality %>
+      <%= f.input :time_slot %>
+      <%= f.input :photo, as: :file %>
+      <%= f.submit "Submit new astronaut", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
