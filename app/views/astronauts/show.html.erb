@@ -4,9 +4,15 @@
       <div class="col-lg-8 card-body">
       <h2 class="card-text"><%= @astronaut.name %></h2>
       <p class="card-text"><%= @astronaut.bio %></p>
-      <%= link_to 'create a booking', new_astronaut_booking_path(@astronaut), class:"btn btn-primary" %>
       </div>
   </div>
+  <div class="container position-relative">
+  <%= simple_form_for [@astronaut, @booking] do |f| %>
+   <%= f.input :date, class:""%>
+  <%= f.submit "Meet Me!", class: "btn btn-primary" %>
+<% end %>
+</div>
+
 </div>
 
 <div class="container">
