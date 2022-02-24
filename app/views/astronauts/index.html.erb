@@ -21,7 +21,7 @@
 <%= link_to "create a new astronaut", new_astronaut_path, class:"btn btn-primary" %>
 </div>
 
-<div class="container">
+<div class="container grid">
   <h2>Choose your favorite Astronaut</h2>
   <div class="row">
     <% @astronauts.each do |astronaut| %>
@@ -38,4 +38,15 @@
       </div>
     <% end %>
   </div>
+<div>
+
+/* Card 1 */
+<div class="cards">
+    <% @astronauts.each do |astronaut| %>
+      <% if astronaut.photo.attached?  %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path astronaut.photo.key, height: 330, crop: :fill, gravity: :face %>')"></div>
+      <% else  %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.OrTvDaHqHaLr8GCNb25AngHaE8%26pid%3DApi&f=1')">Cool</div>
+      <% end  %>
+  <% end  %>
 </div>
