@@ -1,7 +1,7 @@
 <div class="container d-flex justify-content-center">
-  <div class="card" style="width: 36rem;">
-    <img class="card-img-top" src="http://www.universetoday.com/wp-content/uploads/2010/03/Neil-Armstrong.jpg" alt="Card image cap">
-      <div class="card-body">
+  <div class="card row flex-row mt-3" style="width: 50rem;">
+    <img class="col-lg-4 card-img-end img-fluid p-0" src="http://www.universetoday.com/wp-content/uploads/2010/03/Neil-Armstrong.jpg" alt="Card image cap">
+      <div class="col-lg-8 card-body">
       <h2 class="card-text"><%= @astronaut.name %></h2>
       <p class="card-text"><%= @astronaut.bio %></p>
       <%= link_to 'create a booking', new_astronaut_booking_path(@astronaut) %>
