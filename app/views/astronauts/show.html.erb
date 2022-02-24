@@ -4,13 +4,13 @@
       <div class="col-lg-8 card-body">
       <h2 class="card-text"><%= @astronaut.name %></h2>
       <p class="card-text"><%= @astronaut.bio %></p>
-      <%= link_to 'create a booking', new_astronaut_booking_path(@astronaut) %>
+      <%= link_to 'create a booking', new_astronaut_booking_path(@astronaut), class:"btn btn-primary" %>
       </div>
   </div>
 </div>
 
 <div class="container">
 <div class="buttons">
-  <%= link_to 'back', root_path %>
+  <%= link_to 'back', root_path, class:"btn btn-primary" %>
 </div>
 </div>
