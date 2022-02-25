@@ -1,6 +1,10 @@
 <div class="container d-flex justify-content-center">
-  <div class="card row flex-row mt-3 mb-5" style="width: 30rem;">
-  <h1>Your booking</h1>
-  <p>You just booked <%= @booking.astronaut.name %></p>
-  <%= link_to 'Home page', root_path , class: "btn btn-primary"%>
+  <div class="card row flex-row mt-3 pb-3" style="width: 30rem;">
+  <p>You just booked:</p>
+  <h1> <%= @booking.astronaut.name %></h1>
+  <% if @booking.astronaut.photo.attached?  %>
+          <%= cl_image_tag @astronaut.photo.key, height: 300, width: 400, crop: :fill, gravity: :face %>
+        <% else  %>
+          <img width="400" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.OrTvDaHqHaLr8GCNb25AngHaE8%26pid%3DApi&f=1" alt="">
+        <% end  %>
 </div>
