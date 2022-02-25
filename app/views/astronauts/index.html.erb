@@ -21,33 +21,21 @@
 
 
 
+<div class="container">
+  <h1>Astronauts</h1>
+</div>
 
-<div class="container grid">
-  <div class="row">
-    <h2 class="display d-flex justify-content-center">Choose your favorite Astronaut</h2>
+
+
+
+<div class="cards container grid">
     <% @astronauts.each do |astronaut| %>
-      <div class="card-product col">
         <% if astronaut.photo.attached?  %>
-          <%= cl_image_tag astronaut.photo.key, height: 300, width: 400, crop: :fill, gravity: :face %>
+          <%= link_to astronaut_path(astronaut) do %>
+            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= cl_image_path astronaut.photo.key, height: 330, crop: :fill, gravity: :face %>')"></div>
+          <% end  %>
         <% else  %>
-          <img width="400" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.OrTvDaHqHaLr8GCNb25AngHaE8%26pid%3DApi&f=1" alt="">
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.OrTvDaHqHaLr8GCNb25AngHaE8%26pid%3DApi&f=1')">Cool</div>
         <% end  %>
-        <div class="card-product-infos">
-          <h2 class="astro-name"><%= link_to astronaut.name, astronaut_path(astronaut) %></h2>
-          <p><strong><%= astronaut.nationality %></strong></p>
-        </div>
-      </div>
-    <% end %>
-  </div>
-<div>
-
-/* Card 1 */
-<div class="cards">
-    <% @astronauts.each do |astronaut| %>
-      <% if astronaut.photo.attached?  %>
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path astronaut.photo.key, height: 330, crop: :fill, gravity: :face %>')"></div>
-      <% else  %>
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.OrTvDaHqHaLr8GCNb25AngHaE8%26pid%3DApi&f=1')">Cool</div>
-      <% end  %>
-  <% end  %>
+    <% end  %>
 </div>
