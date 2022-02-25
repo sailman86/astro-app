@@ -1,9 +1,9 @@
 <div class="banner row" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://wallup.net/wp-content/uploads/2016/01/211730-space-Earth.jpg);">
   <div class="container row">
     <div class="col-6">
-      <h1>Astroapp</h1>
-      <p>Connect with the space!</p>
-      <div>
+    <h1>Astroapp</h1>
+    <p>Connect with the space!</p>
+       <div>
         <%= form_tag root_path, method: :get do %>
           <%= text_field_tag :query,
             params[:query],
@@ -23,8 +23,8 @@
 
 
 <div class="container grid">
-  <h2>Choose your favorite Astronaut</h2>
   <div class="row">
+    <h2 class="display d-flex justify-content-center">Choose your favorite Astronaut</h2>
     <% @astronauts.each do |astronaut| %>
       <div class="card-product col">
         <% if astronaut.photo.attached?  %>

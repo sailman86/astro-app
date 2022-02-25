@@ -1,15 +1,19 @@
-<div class="container d-flex form">
-  <div class="col">
+<div class="container d-flex form row">
+  <div class="col-6">
     <h1>Create a new astronaut</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores nam doloremque eos error voluptas expedita provident dicta commodi inventore dolorem minus temporibus blanditiis, debitis vel excepturi eaque aspernatur, fugit cum!</p>
+    <img width="300" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2F4.bp.blogspot.com%2F_kVBIKsx0ZqQ%2FS_hLb0xiZYI%2FAAAAAAAAF44%2FU06csaqii-s%2Fs400%2FMillie_Hughes-Fulford.jpg&f=1&nofb=1" alt="">
   </div>
-  <div class="col">
-    <%= simple_form_for [@astronaut] do |f| %>
-      <%= f.input :name %>
-      <%= f.input :bio %>
-      <%= f.input :nationality %>
-      <%= f.input :time_slot %>
-      <%= f.input :photo, as: :file %>
-      <%= f.submit "Submit new astronaut", class: "btn btn-primary" %>
-    <% end %>
+
+  <div class="col-6">
+    <h3>Let's Start!</h3>
+      <%= simple_form_for [@astronaut] do |f| %>
+        <%= f.input :name %>
+        <%= f.input :bio %>
+        <%= f.input :nationality %>
+        <%= f.input :time_slot %>
+        <%= f.input :photo, as: :file %>
+        <%= f.submit "Submit new astronaut", class: "btn btn-primary" %>
+      <% end %>
   </div>
 </div>
