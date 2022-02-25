@@ -31,7 +31,7 @@ class AstronautsController < ApplicationController
   def destroy
     @astronaut.destroy
 
-    redirect_to astronauts_path
+    redirect_to root_path
   end
 
   private
