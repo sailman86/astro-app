@@ -8,5 +8,5 @@ class Astronaut < ApplicationRecord
   belongs_to :user
   has_many :bookings, dependent: :destroy
   has_one_attached :photo
-  validates :name, :bio, :nationality, :time_slot, presence: true
+  validates :name, :bio, :nationality, presence: true
 end
