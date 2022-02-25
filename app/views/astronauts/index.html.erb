@@ -51,3 +51,16 @@
       <% end  %>
   <% end  %>
 </div>
+
+/* Clickable Card */
+<div class="cards">
+    <% @astronauts.each do |astronaut| %>
+        <% if astronaut.photo.attached?  %>
+          <%= link_to astronaut.name, astronaut_path(astronaut) do %>
+            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= cl_image_path astronaut.photo.key, height: 330, crop: :fill, gravity: :face %>')"></div>
+          <% end  %>
+        <% else  %>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.OrTvDaHqHaLr8GCNb25AngHaE8%26pid%3DApi&f=1')">Cool</div>
+        <% end  %>
+    <% end  %>
+</div>
