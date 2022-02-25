@@ -13,12 +13,40 @@
   </head>
 
   <body>
+    <div class="container">
+          <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+      <div class="container-fluid">
+        <a class="navbar-brand">
+          <img src="https://images.vexels.com/media/users/3/243737/isolated/lists/82beeb1d782c18e75144199b0c44939f-purple-space-rocket-stroke.png" alt="Astroapp logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item active">
+              <%= link_to 'Home', root_path, class:'nav-link' %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Add an astronaut", new_astronaut_path, class:"nav-link" %>
+            </li>
+            <li class="nav-item dropdown">
+              <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Another action</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    </div>
 
     <%= yield %>
 
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+
   </body>
 </html>

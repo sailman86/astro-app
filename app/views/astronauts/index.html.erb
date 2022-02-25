@@ -1,29 +1,30 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://wallup.net/wp-content/uploads/2016/01/211730-space-Earth.jpg);">
-  <div class="container">
+<div class="banner row" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://wallup.net/wp-content/uploads/2016/01/211730-space-Earth.jpg);">
+  <div class="container row">
+    <div class="col-6">
     <h1>Astroapp</h1>
     <p>Connect with the space!</p>
-    <div>
+       <div>
         <%= form_tag root_path, method: :get do %>
-         <%= text_field_tag :query,
-           params[:query],
-           class: "form-control",
-           placeholder: "Search for astronaut"
-         %>
-         <div class="position-relative">
-          <%= submit_tag "Search", class: "btn btn-primary position-absolute bottom-0 end-0" %>
-        </div>
-      <% end %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Search for astronaut"
+            %>
+          <div class="position-relative">
+            <%= submit_tag "Search", class: "btn btn-primary position-absolute bottom-0 end-0" %>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
 
-<div>
-<%= link_to "create a new astronaut", new_astronaut_path, class:"btn btn-primary" %>
-</div>
 
-<div class="container">
-  <h2>Choose your favorite Astronaut</h2>
+
+
+<div class="container grid">
   <div class="row">
+    <h2 class="display d-flex justify-content-center">Choose your favorite Astronaut</h2>
     <% @astronauts.each do |astronaut| %>
       <div class="card-product col">
         <% if astronaut.photo.attached?  %>
@@ -38,4 +39,15 @@
       </div>
     <% end %>
   </div>
+<div>
+
+/* Card 1 */
+<div class="cards">
+    <% @astronauts.each do |astronaut| %>
+      <% if astronaut.photo.attached?  %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path astronaut.photo.key, height: 330, crop: :fill, gravity: :face %>')"></div>
+      <% else  %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.OrTvDaHqHaLr8GCNb25AngHaE8%26pid%3DApi&f=1')">Cool</div>
+      <% end  %>
+  <% end  %>
 </div>
