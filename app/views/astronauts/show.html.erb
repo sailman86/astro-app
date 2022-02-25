@@ -1,1 +1,25 @@
-<h1>show page</h1>
+
+<div class="container d-flex justify-content-center">
+  <div class="card row flex-row mt-3" style="width: 50rem;">
+    <div class="col-lg-8 card-body">
+      <div class="d-flex">
+        <% if @astronaut.photo.attached?  %>
+          <%= cl_image_tag @astronaut.photo.key, height: 300, width: 400, crop: :fill, gravity: :face %>
+        <% else  %>
+          <img  class="my-2" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.OrTvDaHqHaLr8GCNb25AngHaE8%26pid%3DApi&f=1" alt="">
+        <% end  %>
+        <div class="container position-relative d-flex justify-content-center ">
+          <%= simple_form_for [@astronaut, @booking] do |f| %>
+            <%= f.input :date, as: :date, html5: true%>
+            <%= f.submit "Meet Me!", class: "btn btn-primary m-3" %>
+          <% end %>
+        </div>
+      </div>
+      <h2 class="card-text text-center"><%= @astronaut.name %></h2>
+      <p class="card-text"><%= @astronaut.bio %></p>
+    </div>
+    <div class="container row flex-row mt-3 p-3">
+      <%= link_to 'Delete', astronaut_path, class:"btn btn-primary m-3", method: :delete %>
+    </div>
+  </div>
+</div>
